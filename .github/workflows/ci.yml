@@ -22,5 +22,5 @@ jobs:
         with:
           args: deploy --dir=build --prod
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: 'nextjs-github-actions-heroku'
+          heroku_app_name: 'maximerobin-portfolio'
           heroku_email: 'maxime.a.robin@gmail.com'
