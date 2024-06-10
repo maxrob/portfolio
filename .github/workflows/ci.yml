@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Deploy to Heroku
-        uses: akhileshns/heroku-deploy@v3.7.8
+        uses: akhileshns/heroku-deploy@v3.13.15
         with:
           args: deploy --dir=build --prod
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
