@@ -1,33 +1,26 @@
-name: CI
+name: Portfolio CI
+
 on:
   push:
-    branches:
-      # Change this if your primary branch is not main
-      - main
+    branches: [main]
   pull_request:
-
-# Needed for nx-set-shas when run on the main branch
-permissions:
-  actions: read
-  contents: read
+    branches: [main]
 
 jobs:
-  main:
+  build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.7.8
         with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: 'npm'
-      # This line enables distribution
-      # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
-      - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
-      - run: npm ci
-
-      - uses: nrwl/nx-set-shas@v4
-
-      - run: npx nx-cloud record -- nx format:check
-      - run: npx nx affected -t lint test build e2e-ci
+          args: deploy --dir=build --prod
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: 'nextjs-github-actions-heroku'
+          heroku_email: 'maxime.a.robin@gmail.com'
