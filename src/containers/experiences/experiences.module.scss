@@ -1,0 +1,121 @@
+@import '../../styles/variables.module.scss';
+
+.experiences {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem 10rem;
+}
+
+.experiences_title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+}
+
+.experience {
+  display: flex;
+  flex-direction: row;
+}
+
+.experience_date {
+  display: flex;
+  width: 50%;
+  border-right: 2px solid $secondary-color;
+  justify-content: flex-end;
+  align-items: center;
+  text-transform: uppercase;
+
+  p {
+    padding: 1.5rem 3rem;
+  }
+}
+
+.experience_content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 3rem;
+  width: 50%;
+}
+
+.experience_title {
+  margin: 0;
+
+  span {
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  a {
+    color: $secondary-color;
+    text-transform: capitalize;
+
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: $secondary-light-color;
+    text-decoration: underline;
+  }
+}
+
+.experience_skills {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: white;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.experience_skill {
+  background-color: $secondary-color;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: $breakpoint-laptop) {
+  .experiences {
+    margin: 4rem 3rem;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .experiences {
+    margin: 3rem 1rem;
+    gap: 2rem;
+  }
+
+  .experiences_title {
+    margin-bottom: 0;
+  }
+
+  .experience {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .experience:not(:last-child) {
+    border-bottom: 1px solid $secondary-color;
+    padding-bottom: 2rem;
+  }
+
+  .experience_date {
+    width: auto;
+    border-right: none;
+    justify-content: center;
+
+    p {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .experience_content {
+    padding: 0.5rem 1rem;
+    width: auto;
+  }
+}

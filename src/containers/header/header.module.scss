@@ -1,0 +1,102 @@
+@import '../../styles/variables.module.scss';
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+
+  a,
+  button {
+    padding: 0.5rem 1rem;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    border-radius: 1.25rem;
+  }
+
+  a:hover,
+  button:hover {
+    padding: 0.5rem 1rem;
+    border: 1px solid $primary-color;
+    background-color: $primary-color;
+    color: white;
+    border-radius: 1.25rem;
+  }
+}
+
+.logo {
+  width: 4rem;
+  height: 4rem;
+
+  img {
+    position: relative !important;
+  }
+}
+
+.header_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 5rem;
+  gap: 5rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  h1 {
+    font-weight: 900;
+    color: #8473ab;
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+.avatar {
+  width: 20rem;
+  height: 20rem;
+
+  img {
+    position: relative !important;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .header_content {
+    flex-direction: column-reverse;
+    margin: 3rem 1rem;
+    gap: 3rem;
+  }
+
+  .title {
+    width: auto;
+    margin: 0 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .avatar {
+    width: 10rem;
+    height: 10rem;
+  }
+}

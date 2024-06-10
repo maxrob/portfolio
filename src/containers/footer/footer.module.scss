@@ -1,0 +1,114 @@
+@import '../../styles/variables.module.scss';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 5rem;
+  align-items: center;
+  background-color: $primary-color;
+  margin-top: 2rem;
+  gap: 4rem;
+}
+
+.footer_mail {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 250px;
+  margin-top: -6rem;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  background-color: $secondary-color;
+  box-shadow: 0 5px 5px 0 $secondary-color, 0 0 0 1px $secondary-color;
+}
+
+.footer_mail_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer_mail_title {
+  font-size: 2rem;
+  color: white;
+  font-weight: 900;
+}
+
+.footer_mail_subtitle {
+  color: white;
+}
+
+.footer_mail_button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid $secondary-light-color;
+  color: white;
+  border-radius: 1.25rem;
+
+  &:hover {
+    color: $secondary-color;
+    border: 1px solid white;
+    background-color: white;
+  }
+}
+
+.footer_links {
+  display: flex;
+  flex-direction: row;
+
+  gap: 1rem;
+
+  a,
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    border: 1px solid $primary-light-color;
+    font-size: 1.5rem;
+    color: white;
+
+    svg {
+      height: 1.5rem;
+    }
+  }
+
+  a:hover,
+  button:hover {
+    border: 1px solid white;
+    background-color: white;
+    color: $primary-color;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-laptop) {
+  .footer_mail {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .footer {
+    padding: 3rem 1rem;
+    gap: 3rem;
+  }
+
+  .footer_mail {
+    width: 100%;
+    height: 200px;
+    margin-top: -5rem;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .footer_mail_title {
+    font-size: 1.5rem;
+  }
+
+  .footer_links {
+    gap: 3rem;
+  }
+}
