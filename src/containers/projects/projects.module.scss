@@ -17,6 +17,7 @@
   background-color: $primary-color;
   font-weight: 800;
   color: white;
+  text-align: center;
 }
 
 .projects_list {
@@ -77,6 +78,7 @@
   .projects_title {
     height: 200px;
     padding: 3rem 1rem;
+    line-height: 2.5rem;
   }
 
   .projects_list {
